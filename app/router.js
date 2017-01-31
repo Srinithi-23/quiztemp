@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('results');
+  this.route('questions',{path:'/questions/:quiz_id'});
 });
 
 export default Router;

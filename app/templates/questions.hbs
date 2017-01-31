@@ -1,0 +1,13 @@
+<form id='ques'>Question {{model.key}}<br>
+{{model.name}}<br>
+{{#each model.ans as |ans|}}
+<input type="radio" name="capital"{{action 'answer' model ans bubbles=false preventDefault=false}}>{{ans}}<br>
+{{/each}}
+{{#if (lte model.id 9)}}
+<button  class="button button2" {{action 'nextq' model.key}}>Next</button>
+{{else}}
+{{#link-to 'results'}}<button class="button button2">Results</button>
+{{/link-to}}
+{{/if}}
+<br>
+</form>
