@@ -24,9 +24,9 @@ export default Ember.Controller.extend({
 
 isAnswered: function(){
   var answered=this.store.peekAll('question');
-  var answered_c=answered.filterBy('user_ans',undefined);
-  console.log(answered_c.length);
-  return answered_c.length;
+  var not_answered=answered.filterBy('user_ans',undefined);
+  console.log(not_answered.length);
+  return not_answered.length;
 
 }.property('@each.user_ans')
 });
