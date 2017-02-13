@@ -1,13 +1,16 @@
-<form id='ques'>Question {{model.key}}<br>
+{{time-taken}}
+<form id='ques'>Question<br>
 {{model.name}}<br>
 {{#each model.ans as |ans|}}
-<input type="radio" name="capital"{{action 'answer' model ans bubbles=false preventDefault=false}}>{{ans}}<br>
+<input type="radio" name="capital" {{action 'answer' model ans bubbles=false preventDefault=false}}>{{ans}}<br>
 {{/each}}
+
+
 {{#if (lte model.id 9)}}
-<button  class="button button2" {{action 'nextq' model.key}}>Next</button>
+<button  class="button button2" {{action 'nextq' model model.key model.user_ans }}>Next</button>
 {{else}}
-{{#link-to 'results'}}<button class="button button2">Results</button>
-{{/link-to}}
+<button class="button button2"{{action 'results_go' model.user_ans}}>Results</button>
+
 {{/if}}
 <br>
 </form>

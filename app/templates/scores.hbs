@@ -1,0 +1,29 @@
+{{outlet}}
+<h2>Scoresheet</h2>
+<table>
+  <tr>
+    <th>Question No.</th>
+    <th>Your Answer</th>
+    <th>Correct answer</th>
+    <th>Your Score</th>
+  </tr>
+{{#each model as |questions|}}
+<tr>
+  <td>{{questions.key}}</td>
+  <td>{{questions.user_ans}}</td>
+  <td>{{questions.correct_ans}}</td>
+  <td>{{ques-answered user_ans=questions.user_ans correct_ans=questions.correct_ans}}</td>
+</tr>
+
+{{/each}}
+<tr>
+  <td colspan="2"></td>
+  <td>Total:</td>
+  <td>{{score}}</td>
+</tr>
+</table>
+<div id=result>
+{{#link-to 'index'}}
+<button class="button button2" {{action 'reloading'}}>Take the quiz again</button>
+{{/link-to}}
+</div>

@@ -8,11 +8,22 @@ model(param){
 },
 
 actions:{
-
-  nextq:function(key){
-    this.transitionTo('questions',(key+1));
-},
-
+  nextq:function(model,key,user_ans){
+    if (user_ans===undefined) {
+      alert('Please select an option');
+    }
+    else {
+      this.transitionTo('questions',(key+1));
+    }
+  },
+  results_go:function(user_ans){
+    if (user_ans===undefined) {
+      alert('Please select an option');
+    }
+else {
+    this.transitionTo('results');
+  }
+  },
   answer:function(model,option){
     let post = this.store.peekRecord('question', model.id);
     console.log('in post',post.id);

@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
   var remark;
   var scr = this.store.peekAll('question');
   var scr_res=scr.filterBy('isCorrect', true);
-  console.log(scr_res.length);
   if(scr_res.length===10){
     remark='Excellent';
   }
@@ -20,7 +19,14 @@ export default Ember.Controller.extend({
     remark='Very Good';
   }
   return [scr_res.length,remark];
-}.property('@each.isCorrect')
+}.property('@each.isCorrect'),
 
 
+isAnswered: function(){
+  var answered=this.store.peekAll('question');
+  var answered_c=answered.filterBy('user_ans',undefined);
+  console.log(answered_c.length);
+  return answered_c.length;
+
+}.property('@each.user_ans')
 });

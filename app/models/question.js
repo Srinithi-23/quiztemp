@@ -7,5 +7,4 @@ export default DS.Model.extend({
   ans:DS.attr(),
   user_ans:DS.attr('string'),
   isCorrect:DS.attr('boolean')
-
 });

@@ -13,6 +13,23 @@ h3{
   font-family: fantasy;
   font-size: 19px;
 }
+table, th, td {
+    border: 1px solid #993300;
+    border-collapse: collapse;
+    color: #993300;
+    empty-cells: hide;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    font-size: 19px;
+    font-family: fantasy;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-right: 200px;
+    margin-left: 400px;
+}
 #result{
   margin-top: 50px;
   margin-bottom: 100px;
@@ -22,6 +39,7 @@ h3{
   padding-right: 30px;
   padding-bottom: 50px;
   padding-left: 30px;
+  text-align: center;
 
 }
 #ques{

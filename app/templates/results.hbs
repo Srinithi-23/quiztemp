@@ -1,4 +1,15 @@
 {{outlet}}
 <div id='result'>
+{{#if (not isAnswered)}}
 <h2>Your Score & Remark:<br> {{score}}</h2>
+{{#link-to 'scores'}}
+<button  class="button button2">View detailed scoresheet</button>
+{{/link-to}}
+
+{{else}}
+
+<h2>You have not attended the quiz.<br>
+   Inorder to do so, click on the button below.<br>
+  {{#link-to 'index'}} <button class="button button2" {{action 'reloading'}}>Go to Home page </button>{{/link-to}}</h2>
+{{/if}}
 </div>
